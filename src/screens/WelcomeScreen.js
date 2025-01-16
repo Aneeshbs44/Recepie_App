@@ -9,6 +9,7 @@ import { widthPercentageToDP as wp,
  import Animated from 'react-native-reanimated'
  import { useNavigation } from '@react-navigation/native'
  import { Image } from 'react-native'
+import { TouchableOpacity } from 'react-native'
 
 const WelcomeScreen = () => {
   const animation = React.useRef(null);
@@ -24,6 +25,7 @@ const WelcomeScreen = () => {
          }}
          />
       <StatusBar style='light' />
+      {/* Lottie logo */}
      <View>
       <LottieView
         autoPlay
@@ -35,8 +37,49 @@ const WelcomeScreen = () => {
         source={require('../../assets/lottie/food-logo.json')}
         />
      </View>
+            {/* Title and Subtitle */}
+            <View className="flex items-center space-y-2">
+        <Text
+          className="text-white font-extrabold tracking-widest"
+          style={{
+            fontSize: hp(5),
+          }}
+        >
+          Food Cafe
+        </Text>
+
+        <Text
+          className="text-white tracking-widest font-medium"
+          style={{
+            fontSize: hp(2.5),
+          }}
+        >
+          Explore some delicious Food
+        </Text>
+      </View>
+      <View>
+        <TouchableOpacity
+          style={{
+            backgroundColor: "#fff",
+            paddingVertical: hp(1.5),
+            paddingHorizontal: hp(5),
+            borderRadius: hp(1.5),
+          }}
+          onPress={() => navigation.navigate("Home")}
+        >
+          <Text
+            style={{
+              color: "#f64e32",
+              fontSize: hp(2.2),
+              fontWeight: "medium",
+            }}
+          >
+            Get Started
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
-  )
+  );
 }
 
 export default WelcomeScreen
