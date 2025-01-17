@@ -12,7 +12,7 @@ export default function AppNavigation() {
     <NavigationIndependentTree>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="Welcome"
+          initialRouteName="Home"
           screenOptions={{
             headerShown: false,
           }}
