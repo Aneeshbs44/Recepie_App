@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import {MagnifyingGlassIcon, AdjustmentsHorizontalIcon} from "react-native-heroicons/outline"
 import { StatusBar } from 'expo-status-bar'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
+import Categories from '../../components/Categories'
 
 export class Homescreen extends Component {
   render() {
@@ -67,7 +68,10 @@ export class Homescreen extends Component {
                   className="flex-1 text-base mb-1 pl-1 tracking-widest"
                   />
                 </View>
-                
+               {/* Categories */} 
+               <View>
+               <Categories />
+               </View>
           </ScrollView>
         </SafeAreaView>
         
