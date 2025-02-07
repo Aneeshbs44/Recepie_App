@@ -4,6 +4,7 @@ import {MagnifyingGlassIcon, AdjustmentsHorizontalIcon} from "react-native-heroi
 import { StatusBar } from 'expo-status-bar'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import Categories from '../../components/Categories'
+import { categoryData } from '../../constants/index'
 
 export class Homescreen extends Component {
   render() {
@@ -26,7 +27,7 @@ export class Homescreen extends Component {
               style={{
                 width: hp(5),
                 height: hp(5),
-                resizeMode: 'cover',
+                resizeMode: 'contain',
               }}
               className = "rounded-full"
               />
@@ -70,7 +71,11 @@ export class Homescreen extends Component {
                 </View>
                {/* Categories */} 
                <View>
-               <Categories />
+               <Categories 
+                categories={categoryData} 
+                activeCategory="SomeCategory" 
+                handleChangeCategory={() => {}} 
+              />
                </View>
           </ScrollView>
         </SafeAreaView>
